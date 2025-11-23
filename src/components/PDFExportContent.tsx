@@ -96,11 +96,11 @@ export const PDFExportContent = () => {
           }}
         >
           <div>Location Yerevan, Armenia</div>
-          <div>Phone {cvData.personalInfo.phone || "+374-xx-xxx-xxx"}</div>
-          <div>Email {cvData.personalInfo.email}</div>
-          <div>Website narek-qolyan-cv.vercel.app</div>
-          <div>GitHub github.com/narek941</div>
-          <div>LinkedIn linkedin.com/in/narek-qolyan-4a92b611b</div>
+          <div>Phone: {cvData.personalInfo.phone || "+374-xx-xxx-xxx"}</div>
+          <div>Email: {cvData.personalInfo.email}</div>
+          <div>Website: narek-qolyan-cv.vercel.app</div>
+          <div>GitHub: github.com/narek941</div>
+          <div>LinkedIn: linkedin.com/in/narek-qolyan-4a92b611b</div>
         </div>
 
         {/* Languages */}
