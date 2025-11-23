@@ -15,14 +15,14 @@ import {
 import type { Card } from "@/types/components.types";
 
 const TECHNOLOGY_PAIRS = [
-  { name: "React", icon: <ReactIcon className="w-8 h-8" /> },
-  { name: "TypeScript", icon: <TypeScript className="w-8 h-8" /> },
-  { name: "Next.js", icon: <Nextjs className="w-8 h-8" /> },
-  { name: "Tailwind CSS", icon: <Tailwind className="w-8 h-8" /> },
-  { name: "Node.js", icon: <Node className="w-8 h-8" /> },
-  { name: "Express.js", icon: <Express className="w-8 h-8" /> },
-  { name: "MongoDB", icon: <MongoDB className="w-8 h-8" /> },
-  { name: "GraphQL", icon: <GraphQL className="w-8 h-8" /> },
+  { name: "React", Icon: ReactIcon },
+  { name: "TypeScript", Icon: TypeScript },
+  { name: "Next.js", Icon: Nextjs },
+  { name: "Tailwind CSS", Icon: Tailwind },
+  { name: "Node.js", Icon: Node },
+  { name: "Express.js", Icon: Express },
+  { name: "MongoDB", Icon: MongoDB },
+  { name: "GraphQL", Icon: GraphQL },
 ];
 
 const shuffleArray = <T,>(array: T[]): T[] => {
@@ -40,7 +40,7 @@ const createCards = (): Card[] => {
   return shuffled.map((tech, index) => ({
     id: index,
     value: tech.name,
-    icon: tech.icon,
+    Icon: tech.Icon,
     flipped: false,
     matched: false,
   }));
@@ -183,10 +183,10 @@ export const GameSection = () => {
               >
                 {card.flipped || card.matched ? (
                   <div className="flex flex-col items-center justify-center gap-0.5 sm:gap-1">
-                    <div className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8">
-                      {card.icon}
+                    <div className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 flex items-center justify-center">
+                      <card.Icon className="w-full h-full" />
                     </div>
-                    <span className="text-[8px] sm:text-xs font-medium leading-tight">
+                    <span className="text-[8px] sm:text-xs font-medium leading-tight text-center">
                       {card.value}
                     </span>
                   </div>

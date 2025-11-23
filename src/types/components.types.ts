@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentType } from "react";
 import type { Project } from "./projects.types";
 import type { Locale } from "@/i18n/config";
 
@@ -23,7 +23,7 @@ export interface ProjectCardProps {
 export interface Card {
   id: number;
   value: string;
-  icon: ReactNode;
+  Icon: ComponentType<{ className?: string }>;
   flipped: boolean;
   matched: boolean;
 }
