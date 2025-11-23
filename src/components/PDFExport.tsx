@@ -1,17 +1,18 @@
 "use client";
 
 import { Download } from "lucide-react";
-import html2pdf from "html2pdf.js";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const PDFExport = () => {
   const { t } = useLanguage();
 
-  const handleExportPDF = () => {
+  const handleExportPDF = async () => {
     const element = document.querySelector(
       ".pdf-export-content"
     ) as HTMLElement;
     if (!element) return;
+
+    const html2pdf = (await import("html2pdf.js")).default;
 
     const opt = {
       margin: 0,

@@ -151,7 +151,7 @@ const itemVariants = {
 
 export const SkillsSection = () => {
   const { t, locale } = useLanguage();
-  const skillCategories = useMemo(() => getSkillCategories(t), [t, locale]);
+  const skillCategories = useMemo(() => getSkillCategories(t), [t]);
 
   return (
     <div className="min-h-screen pt-24 sm:pt-20 py-12 sm:py-20 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-x-hidden">

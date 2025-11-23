@@ -25,16 +25,16 @@ export const LanguageProvider = ({
   useEffect(() => {
     const loadMessages = async () => {
       try {
-        let module;
+        let messagesModule;
         if (locale === "en") {
-          module = await import("@/i18n/messages/en.json");
+          messagesModule = await import("@/i18n/messages/en.json");
         } else if (locale === "ru") {
-          module = await import("@/i18n/messages/ru.json");
+          messagesModule = await import("@/i18n/messages/ru.json");
         } else if (locale === "hy") {
-          module = await import("@/i18n/messages/hy.json");
+          messagesModule = await import("@/i18n/messages/hy.json");
         }
-        if (module) {
-          const messagesData = module.default || module;
+        if (messagesModule) {
+          const messagesData = messagesModule.default || messagesModule;
           setMessages(messagesData);
         }
       } catch (error) {
@@ -52,15 +52,19 @@ export const LanguageProvider = ({
   }, [locale]);
 
   useEffect(() => {
-    const savedLocale = localStorage.getItem("locale") as Locale;
-    if (savedLocale && ["en", "ru", "hy"].includes(savedLocale)) {
-      setLocaleState(savedLocale);
+    if (typeof window !== "undefined") {
+      const savedLocale = localStorage.getItem("locale") as Locale;
+      if (savedLocale && ["en", "ru", "hy"].includes(savedLocale)) {
+        setLocaleState(savedLocale);
+      }
     }
   }, []);
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
-    localStorage.setItem("locale", newLocale);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("locale", newLocale);
+    }
   };
 
   const t = (key: string): string => {
@@ -87,4 +91,3 @@ export const useLanguage = () => {
   }
   return context;
 };
-
