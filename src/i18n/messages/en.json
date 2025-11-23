@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "home": "Home",
+    "cv": "CV",
+    "skills": "Skills",
+    "projects": "Projects",
+    "game": "Game",
+    "changeLanguage": "Change language"
+  },
+  "hero": {
+    "title": "Hi, I'm",
+    "subtitle": "Building modern web & mobile applications",
+    "description": "Hi! I'm a React developer who strives to create functional web/mobile applications. My goal is to make my work as efficient and user-friendly as possible. I started my journey in programming with simple projects, and since then, I've been continuously learning and improving. I'm ready to face challenges and always try to find a solution for every task. I'd be happy to help bring your ideas to life!",
+    "viewCv": "View CV",
+    "seeProjects": "See Projects",
+    "badge": {
+      "react": "React Developer",
+      "reactNative": "React Native",
+      "fullStack": "Full Stack Experience"
+    }
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "name": "Narek Kolyan",
+    "exportPdf": "Export to PDF",
+    "skills": "Skills",
+    "experience": "Work Experience",
+    "education": "Education",
+    "languages": "Languages",
+    "additionalInfo": "Additional Information",
+    "professionalSummary": "Professional Summary",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "visitWebsite": "Visit {company} website",
+    "bio": "Hi! I'm a React developer who strives to create functional web/mobile applications. My goal is to make my work as efficient and user-friendly as possible. I started my journey in programming with simple projects, and since then, I've been continuously learning and improving. I'm ready to face challenges and always try to find a solution for every task. I'd be happy to help bring your ideas to life!",
+    "professionalSummaryText": "Full-Stack React & React Native Developer with 4+ years of commercial experience building complex web and mobile applications. Specialized in e-commerce, large-scale data management platforms, API integrations, and high-performance frontend solutions. Strong background in TypeScript, modern state management, and delivering pixel-perfect, scalable products.",
+    "shelllogix": {
+      "description": "Outsource-based software company specializing in web and mobile-based work management, project management, and custom digital solutions.",
+      "work1": "Worked on various client projects as part of an outsource team, developing web and mobile applications using React, React Native, and TypeScript",
+      "work2": "Collaborated with international clients and teams to deliver high-quality software solutions",
+      "work3": "Built responsive web applications and cross-platform mobile apps with modern state management and secure authentication",
+      "work4": "Contributed to multiple projects including e-commerce platforms, business management tools, and financial applications"
+    },
+    "opta": {
+      "description": "World leader in sports AI. With 7.2 petabytes of proprietary sports data and 8 foundation sports AI models, empowering the world's top sports broadcasters, media, apps, leagues, federations, bookmakers and teams.",
+      "work1": "Managed, validated, and edited large-scale sports datasets across multiple leagues with 100% accuracy and strict deadlines",
+      "work2": "Coordinated with global data teams to deliver real-time statistics to broadcasters, media partners, and betting companies",
+      "work3": "Strong domain knowledge in sports data helped significantly in building accurate filtering and statistics-heavy UIs"
+    },
+    "additionalInfo1": "Available for full-time remote or relocation",
+    "additionalInfo2": "Passionate about clean code, performance, and beautiful UI/UX",
+    "additionalInfo3": "Active open-source contributor on GitHub",
+    "additionalInfo4": "Fast learner – successfully transitioned from sports data industry to full-time software engineering",
+    "education": {
+      "degree": "Bachelor's Degree in Agriculture Marketing & Business",
+      "institution": "Armenian National Agrarian University",
+      "coursework": "Relevant coursework: Economics, Statistics, Project Management"
+    },
+    "languages": {
+      "armenian": "Native / First Language",
+      "russian": "C1 – Advanced",
+      "english": "B2 – Upper-Intermediate (professional working proficiency)"
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "A comprehensive toolkit for building modern web and mobile applications",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend/API",
+    "ecommerce": "E-commerce",
+    "tools": "Tools",
+    "other": "Other"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A collection of my recent work, including web applications, mobile apps, and open-source tools",
+    "technologies": "Technologies:",
+    "features": "Key Features:",
+    "viewNpm": "View on npm",
+    "viewGithub": "GitHub",
+    "liveDemo": "Live Demo",
+    "teamProject": "Team Project",
+    "personalProject": "Personal Project",
+    "status": {
+      "production": "Production",
+      "development": "Development",
+      "published": "Published"
+    },
+    "accounting-platform": {
+      "description": "My first project - still in use today. Multi-language web application for accounting services in Armenia. Features canvas forms and form-to-email functionality. Built with modern React stack.",
+      "feature1": "Multi-language support (Armenian, English, Russian)",
+      "feature2": "Canvas-based form generation",
+      "feature3": "Form-to-email functionality",
+      "feature4": "Company registration services",
+      "feature5": "Tax planning and consultation",
+      "feature6": "Responsive design for all devices"
+    },
+    "crypto-admin-panel": {
+      "description": "Admin panel for cryptocurrency exchange and statistics. Built for a Ukrainian company. Features real-time crypto exchange rates, trading statistics, and comprehensive admin dashboard. Frontend development only.",
+      "feature1": "Real-time cryptocurrency exchange rates",
+      "feature2": "Trading statistics and analytics",
+      "feature3": "Admin dashboard interface",
+      "feature4": "Data visualization with charts",
+      "feature5": "User management system"
+    },
+    "mobile-ecommerce-solution": {
+      "description": "Russian company providing ready-to-use mobile shopping applications for 100+ brands from Russia, UK, and US. Solutions for various industries from pharmacy to automobile. Features 5+ analytics variants, custom backend, Shopify backend integration. Worked as fullstack developer (React, React Native, Node.js) with 40+ team members.",
+      "feature1": "Ready-to-use applications for 100+ brands",
+      "feature2": "Multiple analytics variants (5+)",
+      "feature3": "Custom backend integration",
+      "feature4": "Shopify backend support",
+      "feature5": "Cross-platform (iOS & Android)",
+      "feature6": "Industry-specific solutions",
+      "feature7": "Real-time product browsing",
+      "feature8": "Secure checkout and payments"
+    },
+    "rv-rental-platform": {
+      "description": "US-based company project for RV rental services. Custom Shopify solution allowing clients to rent RV vehicles and book campgrounds. Worked as React developer on multiple RV rental related projects.",
+      "feature1": "RV vehicle rental system",
+      "feature2": "Campground booking functionality",
+      "feature3": "Custom Shopify checkout",
+      "feature4": "Payment processing",
+      "feature5": "Reservation management",
+      "feature6": "Multi-project involvement"
+    },
+    "ai-social-media-generator": {
+      "description": "Business tool for generating social media posts using multiple AI models. Generates videos by parts and seamlessly connects them together. Automates content creation workflow for businesses. Built for US client.",
+      "feature1": "Multiple AI model integration",
+      "feature2": "Video generation by parts",
+      "feature3": "Automatic video connection",
+      "feature4": "Social media post creation",
+      "feature5": "Content automation workflow",
+      "feature6": "Business-focused features"
+    },
+    "git-cli-tool": {
+      "description": "npm package for managing multiple Git identities. Easily switch between work, personal, and organization accounts with cross-platform support. Personal open-source project.",
+      "feature1": "Cross-platform support",
+      "feature2": "Interactive CLI setup",
+      "feature3": "Automatic SSH key switching",
+      "feature4": "Shell integration",
+      "feature5": "50+ unit tests"
+    },
+    "service-admin-panel": {
+      "description": "Russian company based in Cyprus with 50+ employees. Enterprise admin dashboard for user segmentation and marketing campaigns. Features real-time analytics, advanced filtering, and integrations with HubSpot and Communication Service.",
+      "feature1": "Real-time dashboard analytics",
+      "feature2": "User segmentation management",
+      "feature3": "Advanced filtering system",
+      "feature4": "HubSpot integration",
+      "feature5": "Communication Service sync",
+      "feature6": "Feature-based architecture"
+    },
+    "mobile-webview-app": {
+      "description": "React Native application with WebView integration for displaying company website. Main feature is per-app VPN functionality that users can enable directly in the app. Built for previous company.",
+      "feature1": "WebView component integration",
+      "feature2": "Per-app VPN functionality",
+      "feature3": "In-app VPN toggle",
+      "feature4": "Cross-platform support (Android & iOS)",
+      "feature5": "Native module integration"
+    }
+  },
+  "game": {
+    "title": "Memory Game",
+    "subtitle": "Match all pairs of cards to win! Test your memory skills.",
+    "moves": "Moves",
+    "status": "Status",
+    "playing": "Playing",
+    "won": "Won",
+    "newGame": "New Game",
+    "congratulations": "Congratulations! You won in {moves} moves!",
+    "instructions": "Click on cards to flip them. Match pairs to win!"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "rights": "All rights reserved",
+    "description": "Full Stack Developer passionate about building modern web applications."
+  }
+}
