@@ -85,6 +85,48 @@ export const PDFExportContent = () => {
           {t("cv.professionalSummaryText")}
         </p>
 
+        {cvData.keyEngineeringAchievements?.length ? (
+          <>
+            <SectionTitle title={t("cv.keyAchievements").toUpperCase()} accentColor={teal} />
+            <ul
+              style={{
+                fontSize: "10px",
+                lineHeight: "1.5",
+                color: "#d0d0d0",
+                marginBottom: "18px",
+                paddingLeft: "14px",
+              }}
+            >
+              {cvData.keyEngineeringAchievements.map((key) => (
+                <li key={key} style={{ marginBottom: "4px" }}>
+                  {t(`cv.${key}`)}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
+
+        {cvData.engineeringPrinciples?.length ? (
+          <>
+            <SectionTitle title={t("cv.engineeringPrinciples").toUpperCase()} accentColor={teal} />
+            <ul
+              style={{
+                fontSize: "10px",
+                lineHeight: "1.5",
+                color: "#d0d0d0",
+                marginBottom: "18px",
+                paddingLeft: "14px",
+              }}
+            >
+              {cvData.engineeringPrinciples.map((key) => (
+                <li key={key} style={{ marginBottom: "4px" }}>
+                  {t(`cv.${key}`)}
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
+
         {/* Contact */}
         <SectionTitle title="CONTACT" accentColor={teal} />
         <div

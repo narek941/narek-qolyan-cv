@@ -105,6 +105,32 @@ export const CVSection = () => {
             </p>
           </div>
 
+          {cvData.keyEngineeringAchievements?.length ? (
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+                {t("cv.keyAchievements")}
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                {cvData.keyEngineeringAchievements.map((key) => (
+                  <li key={key}>{t(`cv.${key}`)}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {cvData.engineeringPrinciples?.length ? (
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+                {t("cv.engineeringPrinciples")}
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                {cvData.engineeringPrinciples.map((key) => (
+                  <li key={key}>{t(`cv.${key}`)}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
               {t("cv.skills")}

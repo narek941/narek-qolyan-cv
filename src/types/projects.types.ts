@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   technologies: string[];
   features: string[];
+  architectureHighlightKeys?: string[];
   link?: string;
   github?: string;
   npm?: string;

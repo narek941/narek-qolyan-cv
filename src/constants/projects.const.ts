@@ -53,6 +53,7 @@ export const projects: Project[] = [
   {
     id: "mobile-ecommerce-solution",
     name: "Mobile E-commerce Solution",
+    architectureHighlightKeys: ["arch1", "arch2", "arch3"],
     description:
       "Russian company providing ready-to-use mobile shopping applications for 100+ brands from Russia, UK, and US. Solutions for various industries from pharmacy to automobile. Features 5+ analytics variants, custom backend, Shopify backend integration. Worked as fullstack developer (React, React Native, Node.js) with 40+ team members.",
     technologies: [
@@ -82,6 +83,7 @@ export const projects: Project[] = [
   {
     id: "rv-rental-platform",
     name: "RV Rental Platform",
+    architectureHighlightKeys: ["arch1", "arch2", "arch3"],
     description:
       "US-based company project for RV rental services. Custom Shopify solution allowing clients to rent RV vehicles and book campgrounds. Worked as React developer on multiple RV rental related projects.",
     technologies: [
@@ -107,6 +109,7 @@ export const projects: Project[] = [
   {
     id: "ai-social-media-generator",
     name: "AI Social Media Post Generator",
+    architectureHighlightKeys: ["arch1", "arch2", "arch3"],
     description:
       "Business tool for generating social media posts using multiple AI models. Generates videos by parts and seamlessly connects them together. Automates content creation workflow for businesses. Built for US client.",
     technologies: [
@@ -155,6 +158,7 @@ export const projects: Project[] = [
   {
     id: "service-admin-panel",
     name: "Service Admin Panel",
+    architectureHighlightKeys: ["arch1", "arch2", "arch3"],
     description:
       "Russian company based in Cyprus with 50+ employees. Enterprise admin dashboard for user segmentation and marketing campaigns. Features real-time analytics, advanced filtering, and integrations with HubSpot and Communication Service.",
     technologies: [

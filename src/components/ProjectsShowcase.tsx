@@ -161,6 +161,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </ul>
       </div>
 
+      {project.architectureHighlightKeys?.length ? (
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+            {t("projects.architectureHighlights")}
+          </h4>
+          <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+            {project.architectureHighlightKeys.map((key) => (
+              <li key={key}>{t(`projects.${project.id}.${key}`)}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       <div className="flex gap-3 mt-6">
         {project.npm && (
           <motion.a

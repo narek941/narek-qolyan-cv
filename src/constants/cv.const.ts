@@ -1,18 +1,27 @@
 export const cvData = {
   personalInfo: {
     name: "Narek Kolyan",
-    title: "React / React Native Developer",
+    title: "Senior Frontend Engineer",
     email: "nqolyan@gmail.com",
     phone: "+37455818286",
     location: "Yerevan, Armenia",
     github: "https://github.com/narek941",
     linkedin: "https://linkedin.com/in/narek-qolyan-4a92b611b",
-    bio: "Hi! I'm a React developer who strives to create functional web/mobile applications. My goal is to make my work as efficient and user-friendly as possible. I started my journey in programming with simple projects, and since then, I've been continuously learning and improving. I'm ready to face challenges and always try to find a solution for every task. I'd be happy to help bring your ideas to life!",
-    yearsOfExperience: "4+",
+    bio: "Senior Frontend Engineer with 6+ years of experience building scalable web and mobile applications. Focused on React, TypeScript, architecture, and performance. Open to remote opportunities.",
+    yearsOfExperience: "6+",
     specialization: "Frontend & Mobile Development",
   },
   professionalSummary:
-    "Full-Stack React & React Native Developer with 4+ years of commercial experience building complex web and mobile applications. Specialized in e-commerce, large-scale data management platforms, API integrations, and high-performance frontend solutions. Strong background in TypeScript, modern state management, and delivering pixel-perfect, scalable products.",
+    "Senior Frontend Engineer with 6+ years of experience building scalable web and mobile applications using React, TypeScript, and modern frontend architectures. Specialized in headless e-commerce, GraphQL data layers, and performance optimization for high-traffic applications. Experienced in modular UI systems, React Native, and delivering maintainable, scalable products.",
+  keyEngineeringAchievements: [
+    "achievement1",
+    "achievement2",
+    "achievement3",
+    "achievement4",
+    "achievement5",
+    "achievement6",
+  ],
+  engineeringPrinciples: ["principle1", "principle2", "principle3"],
   skills: {
     frontend: [
       "React",
@@ -39,9 +48,9 @@ export const cvData = {
       "WebView",
       "Native Modules",
     ],
-    backend: ["Node.js", "Express.js", "REST APIs"],
+    backend: ["Node.js", "Express.js", "REST APIs", "GraphQL"],
     ecommerce: [
-      "Shopify Integration",
+      "Shopify / Hydrogen",
       "Custom Checkout Flows",
       "Payment Gateways",
     ],
@@ -58,7 +67,7 @@ export const cvData = {
     other: [
       "Responsive Design",
       "Performance Optimization",
-      "GraphQL (basic)",
+      "GraphQL",
     ],
   },
   experience: [
@@ -67,7 +76,7 @@ export const cvData = {
       companyDescription:
         "Outsource-based software company specializing in web and mobile-based work management, project management, and custom digital solutions.",
       companyUrl: "https://shelllogix.com/",
-      position: "React / React Native Developer",
+      position: "Senior Frontend Engineer",
       period: "Oct 2021 – Present",
       location: "Yerevan, Armenia",
       description: [
