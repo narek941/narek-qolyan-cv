@@ -1,7 +1,7 @@
 "use client";
 
-import { Download } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Download } from "lucide-react";
 
 export const PDFExport = () => {
   const { t } = useLanguage();
@@ -25,8 +25,11 @@ export const PDFExport = () => {
         removeContainer: true,
         letterRendering: true,
         fontFamily: "Arial, sans-serif",
+        scrollX: 0,
+        scrollY: 0,
       },
       jsPDF: { unit: "in", format: "a4", orientation: "portrait" as const },
+      pagebreak: { mode: "avoid-all" as const },
     };
 
     html2pdf().set(opt).from(element).save();

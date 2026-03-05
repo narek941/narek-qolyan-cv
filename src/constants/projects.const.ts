@@ -200,4 +200,31 @@ export const projects: Project[] = [
     type: "mobile",
     teamProject: true,
   },
+  {
+    id: "mobile-health-device-app",
+    name: "Smart Device & Health Mobile App",
+    description:
+      "Cross-platform mobile app for connected smart devices and health data. BLE device pairing, OTA firmware updates, and sync with major health platforms. React Native with TypeScript and Expo.",
+    technologies: [
+      "React Native",
+      "TypeScript",
+      "Expo",
+      "BLE",
+      "HealthKit",
+      "Health Connect",
+      "Google Fit",
+      "OTA Firmware",
+    ],
+    features: [
+      "BLE device connectivity and pairing",
+      "Over-the-air firmware updates",
+      "Health platform sync (iOS HealthKit, Android Health Connect, Google Fit)",
+      "Stats dashboard and progress tracking",
+      "Cross-platform (iOS & Android)",
+      "Native module integration",
+    ],
+    status: "production",
+    type: "mobile",
+    teamProject: true,
+  },
 ];

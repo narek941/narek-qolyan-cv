@@ -25,8 +25,7 @@
     "exportPdf": "Export to PDF",
     "skills": "Skills",
     "experience": "Work Experience",
-    "education": "Education",
-    "languages": "Languages",
+    "language": "Languages",
     "additionalInfo": "Additional Information",
     "professionalSummary": "Professional Summary",
     "frontend": "Frontend",
@@ -54,8 +53,11 @@
     "additionalInfo3": "Active open-source contributor on GitHub",
     "additionalInfo4": "Fast learner – successfully transitioned from sports data industry to full-time software engineering",
     "education": {
+      "title": "Education",
       "degree": "Bachelor's Degree in Agriculture Marketing & Business",
       "institution": "Armenian National Agrarian University",
+      "period": "Sep 2018 – Jun 2022",
+      "location": "Yerevan, Armenia",
       "coursework": "Relevant coursework: Economics, Statistics, Project Management"
     },
     "languages": {
@@ -159,6 +161,15 @@
       "feature3": "In-app VPN toggle",
       "feature4": "Cross-platform support (Android & iOS)",
       "feature5": "Native module integration"
+    },
+    "mobile-health-device-app": {
+      "description": "Cross-platform mobile app for connected smart devices and health data. BLE device pairing, OTA firmware updates, and sync with major health platforms. React Native with TypeScript and Expo.",
+      "feature1": "BLE device connectivity and pairing",
+      "feature2": "Over-the-air firmware updates",
+      "feature3": "Health platform sync (iOS HealthKit, Android Health Connect, Google Fit)",
+      "feature4": "Stats dashboard and progress tracking",
+      "feature5": "Cross-platform (iOS & Android)",
+      "feature6": "Native module integration"
     }
   },
   "game": {
@@ -176,6 +187,6 @@
     "quickLinks": "Quick Links",
     "connect": "Connect",
     "rights": "All rights reserved",
-    "description": "Full Stack Developer passionate about building modern web applications."
+    "description": "Full Stack Developer passionate about building modern applications."
   }
 }

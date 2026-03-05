@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ExternalLink, Github, Package } from "lucide-react";
 import { projects } from "@/constants/projects.const";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { ProjectCardProps } from "@/types/components.types";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Package } from "lucide-react";
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const { t } = useLanguage();
@@ -104,7 +104,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             {getTypeIcon()}
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white break-words">
               {project.name}
             </h3>
             {project.teamProject !== undefined && (

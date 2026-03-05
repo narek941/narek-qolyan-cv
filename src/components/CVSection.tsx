@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
 import { cvData } from "@/constants/cv.const";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 import { PDFExport } from "./PDFExport";
 import { PDFExportContent } from "./PDFExportContent";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export const CVSection = () => {
   const cvRef = useRef<HTMLDivElement | null>(null);
@@ -226,7 +226,7 @@ export const CVSection = () => {
 
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
-              {t("cv.education")}
+              {t("cv.education.title")}
             </h3>
             {cvData.education.map((edu, index) => (
               <div key={index} className="mb-4">
@@ -237,7 +237,7 @@ export const CVSection = () => {
                   {t("cv.education.institution")}
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {edu.period}, {edu.location}
+                  {t("cv.education.period")}, {t("cv.education.location")}
                 </p>
                 {edu.note && (
                   <p className="text-sm text-gray-600 dark:text-gray-400 italic mt-1">
@@ -251,7 +251,7 @@ export const CVSection = () => {
           {cvData.languages && (
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
-                {t("cv.languages")}
+                {t("cv.language")}
               </h3>
               <div className="space-y-3">
                 {cvData.languages.map((lang, index) => (

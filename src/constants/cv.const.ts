@@ -20,9 +20,11 @@ export const cvData = {
       "TypeScript",
       "Redux",
       "Zustand",
+      "React Query",
       "Context API",
       "Expo",
       "Next.js",
+      "Vite",
       "React Hook Form",
       "SCSS/SASS",
       "Tailwind CSS",
@@ -30,6 +32,9 @@ export const cvData = {
     mobile: [
       "React Native + Expo",
       "iOS & Android Deployment",
+      "BLE (Bluetooth Low Energy)",
+      "HealthKit / Health Connect / Google Fit",
+      "OTA Firmware Updates",
       "Push Notifications",
       "WebView",
       "Native Modules",
@@ -46,10 +51,15 @@ export const cvData = {
       "Jira",
       "Figma",
       "Postman",
+      "Sentry",
       "Docker (basic)",
       "CI/CD",
     ],
-    other: ["Responsive Design", "Performance Optimization", "GraphQL (basic)"],
+    other: [
+      "Responsive Design",
+      "Performance Optimization",
+      "GraphQL (basic)",
+    ],
   },
   experience: [
     {

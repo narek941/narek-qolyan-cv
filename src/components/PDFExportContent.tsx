@@ -225,7 +225,7 @@ export const PDFExportContent = () => {
             <p
               style={{ fontSize: "11px", color: "#555555", lineHeight: "1.5" }}
             >
-              Department of Agriculture Marketing & Business • Yerevan, Armenia
+              {t("cv.education.location")}
             </p>
           </div>
         ))}
