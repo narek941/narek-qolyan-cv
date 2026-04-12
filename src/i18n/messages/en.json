@@ -37,6 +37,7 @@
     "backend": "Backend",
     "linkedin": "LinkedIn",
     "github": "GitHub",
+    "medium": "Medium",
     "visitWebsite": "Visit {company} website",
     "bio": "Senior Frontend Engineer with 5+ years of experience building scalable web and mobile applications. Focused on React, TypeScript, architecture, and performance. Open to remote opportunities.",
     "professionalSummaryText": "Senior Frontend Engineer with 6+ years of experience building scalable web and mobile applications using React, TypeScript, and modern frontend architectures. Specialized in headless e-commerce, GraphQL data layers, and performance optimization for high-traffic applications. Experienced in modular UI systems, React Native, and delivering maintainable, scalable products.",

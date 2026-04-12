@@ -37,6 +37,7 @@
     "backend": "Бэкенд",
     "linkedin": "LinkedIn",
     "github": "GitHub",
+    "medium": "Medium",
     "visitWebsite": "Посетить сайт {company}",
     "bio": "Senior Frontend Engineer с 5+ годами опыта. Создаю масштабируемые веб и мобильные приложения на React и TypeScript. Открыт к удалённым предложениям.",
     "professionalSummaryText": "Senior Frontend Engineer с 6+ годами опыта разработки масштабируемых веб и мобильных приложений на React, TypeScript и современных фронтенд-архитектурах. Специализация: headless e-commerce, GraphQL, оптимизация производительности. Опыт модульных UI-систем, React Native и поставки поддерживаемых продуктов.",

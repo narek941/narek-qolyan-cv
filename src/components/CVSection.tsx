@@ -87,6 +87,15 @@ export const CVSection = () => {
               >
                 {t("cv.github")}
               </a>
+              <span>•</span>
+              <a
+                href={cvData.personalInfo.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-600 dark:hover:text-primary-400"
+              >
+                {t("cv.medium")}
+              </a>
             </div>
           </div>
 

@@ -65,6 +65,16 @@ export const Footer = () => {
               </li>
               <li>
                 <a
+                  href={cvData.personalInfo.medium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  {t("cv.medium")}
+                </a>
+              </li>
+              <li>
+                <a
                   href={cvData.personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
