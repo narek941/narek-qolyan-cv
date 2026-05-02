@@ -96,124 +96,75 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 group"
+      className="bg-zinc-900/50 backdrop-blur-sm rounded-[2.5rem] p-8 hover:bg-zinc-900/80 transition-all duration-500 border border-white/5 hover:border-white/20 shadow-2xl group flex flex-col h-full"
     >
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4">
-        <div className="flex items-center gap-3 flex-1 min-w-0">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-primary-500 to-blue-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-            {getTypeIcon()}
-          </div>
-          <div className="min-w-0 flex-1">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white break-words">
-              {project.name}
-            </h3>
-            {project.teamProject !== undefined && (
-              <span className="text-xs text-gray-500 dark:text-gray-400">
-                {project.teamProject
-                  ? t("projects.teamProject")
-                  : t("projects.personalProject")}
+      <div className="flex justify-between items-start mb-8">
+        <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform duration-500">
+          {getTypeIcon()}
+        </div>
+        {project.teamProject !== undefined && (
+          <span className="px-3 py-1 bg-white/5 text-white/40 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/5">
+            {project.teamProject
+              ? t("projects.teamProject")
+              : t("projects.personalProject")}
+          </span>
+        )}
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-blue-400 transition-colors">
+        {project.name}
+      </h3>
+
+      <p className="text-white/50 mb-8 font-light leading-relaxed flex-grow">
+        {t(`projects.${project.id}.description`)}
+      </p>
+
+      <div className="space-y-6">
+        <div>
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.slice(0, 4).map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-white/5 text-white/60 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/5"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.technologies.length > 4 && (
+               <span className="px-3 py-1 bg-white/5 text-white/30 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/5">
+                +{project.technologies.length - 4}
               </span>
             )}
           </div>
         </div>
-      </div>
 
-      <p
-        className={`text-gray-600 dark:text-gray-300 mb-4 ${
-          t(`projects.${project.id}.description`).length > 150
-            ? "text-sm"
-            : "text-base"
-        }`}
-      >
-        {t(`projects.${project.id}.description`)}
-      </p>
-
-      <div className="mb-4">
-        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-          {t("projects.technologies")}
-        </h4>
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded text-xs"
+        <div className="flex gap-3 pt-4 border-t border-white/5">
+          {project.github && (
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all border border-white/5"
             >
-              {tech}
-            </span>
-          ))}
+              <Github className="w-5 h-5" />
+            </motion.a>
+          )}
+          {project.link && (
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-full text-sm font-black tracking-tighter hover:bg-blue-400 transition-all"
+            >
+              {t("projects.liveDemo")}
+              <ExternalLink className="w-4 h-4" />
+            </motion.a>
+          )}
         </div>
-      </div>
-
-      <div className="mb-4">
-        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-          {t("projects.features")}
-        </h4>
-        <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          {project.features.map((feature, index) => {
-            const featureKey = `projects.${project.id}.feature${index + 1}`;
-            const translatedFeature = t(featureKey);
-            return (
-              <li key={index}>
-                {translatedFeature !== featureKey ? translatedFeature : feature}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      {project.architectureHighlightKeys?.length ? (
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-            {t("projects.architectureHighlights")}
-          </h4>
-          <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-            {project.architectureHighlightKeys.map((key) => (
-              <li key={key}>{t(`projects.${project.id}.${key}`)}</li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-
-      <div className="flex gap-3 mt-6">
-        {project.npm && (
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href={project.npm}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
-          >
-            <Package className="w-4 h-4" />
-            {t("projects.viewNpm")}
-          </motion.a>
-        )}
-        {project.github && (
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg text-sm font-medium hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors shadow-md hover:shadow-lg"
-          >
-            <Github className="w-4 h-4" />
-            {t("projects.viewGithub")}
-          </motion.a>
-        )}
-        {project.link && (
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 rounded-lg text-sm font-medium hover:bg-primary-200 dark:hover:bg-primary-900/30 transition-colors shadow-md hover:shadow-lg"
-          >
-            <ExternalLink className="w-4 h-4" />
-            {t("projects.liveDemo")}
-          </motion.a>
-        )}
       </div>
     </motion.div>
   );
@@ -223,19 +174,22 @@ export const ProjectsShowcase = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-20 py-12 sm:py-20 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen pt-32 py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-x-hidden relative">
+      <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16 px-2"
+          className="text-center mb-24"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400 bg-clip-text text-transparent break-words">
+          <h2 className="text-4xl sm:text-6xl font-black mb-6 text-white tracking-tight">
             {t("projects.title")}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-2xl text-white/40 max-w-2xl mx-auto font-light">
             {t("projects.subtitle")}
           </p>
         </motion.div>
@@ -245,7 +199,7 @@ export const ProjectsShowcase = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
             <motion.div

@@ -12,7 +12,8 @@ export const CVSection = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-20 py-12 sm:py-20 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-x-hidden">
+    <div className="min-h-screen pt-32 py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-x-hidden relative">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -37,10 +38,10 @@ export const CVSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100 dark:border-slate-700"
+          className="bg-zinc-900/50 backdrop-blur-sm rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative z-10"
         >
           <div className="text-center mb-8 pb-8 border-b border-gray-200 dark:border-slate-700">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            <h1 className="text-4xl font-black text-white mb-2 tracking-tight">
               {cvData.personalInfo.name}
             </h1>
             <p className="text-xl text-primary-600 dark:text-primary-400 mb-4">
@@ -100,23 +101,17 @@ export const CVSection = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
               {t("cv.professionalSummary")}
             </h3>
-            <p
-              className={`text-gray-700 dark:text-gray-300 leading-relaxed ${
-                t("cv.professionalSummaryText").length < 200
-                  ? "text-base"
-                  : "text-sm"
-              }`}
-            >
+            <p className="text-white/50 text-lg font-light leading-relaxed">
               {t("cv.professionalSummaryText")}
             </p>
           </div>
 
           {cvData.keyEngineeringAchievements?.length ? (
             <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
                 {t("cv.keyAchievements")}
               </h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm">
@@ -129,7 +124,7 @@ export const CVSection = () => {
 
           {cvData.engineeringPrinciples?.length ? (
             <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
                 {t("cv.engineeringPrinciples")}
               </h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm">
@@ -141,7 +136,7 @@ export const CVSection = () => {
           ) : null}
 
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
               {t("cv.skills")}
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
@@ -179,7 +174,7 @@ export const CVSection = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
               {t("cv.experience")}
             </h3>
             {cvData.experience.map((exp, index) => (
@@ -260,7 +255,7 @@ export const CVSection = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
               {t("cv.education.title")}
             </h3>
             {cvData.education.map((edu, index) => (
@@ -285,7 +280,7 @@ export const CVSection = () => {
 
           {cvData.languages && (
             <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
                 {t("cv.language")}
               </h3>
               <div className="space-y-3">
@@ -307,7 +302,7 @@ export const CVSection = () => {
 
           {cvData.additionalInfo && (
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-4 text-white tracking-tight">
                 {t("cv.additionalInfo")}
               </h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm">

@@ -8,11 +8,13 @@ import type { HeroProps } from "@/types/components.types";
 export const Hero = ({ onGetStarted }: HeroProps) => {
   const { t } = useLanguage();
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-800 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary-200 dark:bg-primary-900/20 rounded-full blur-3xl opacity-20 -z-10" />
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
+      {/* Expo-style vibrant radial gradients */}
+      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-blue-600/20 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-purple-600/20 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-indigo-600/10 rounded-full blur-[100px] -z-10" />
 
-      <div className="max-w-5xl mx-auto px-3 sm:px-4 lg:px-8 text-center relative z-10 pt-20 sm:pt-0 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -22,27 +24,29 @@ export const Hero = ({ onGetStarted }: HeroProps) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 shadow-lg flex-wrap justify-center"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-sm font-medium text-white/80 mb-8 shadow-2xl"
           >
-            <Code className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
-            <span className="whitespace-nowrap">{t("hero.badge.react")}</span>
-            <span className="text-gray-400">•</span>
-            <Smartphone className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
-            <span className="whitespace-nowrap">
-              {t("hero.badge.reactNative")}
-            </span>
-            <span className="text-gray-400">•</span>
-            <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
-            <span className="whitespace-nowrap">
-              {t("hero.badge.fullStack")}
-            </span>
+            <div className="flex -space-x-2 mr-2">
+              <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center border-2 border-black">
+                <Code className="w-3 h-3 text-white" />
+              </div>
+              <div className="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center border-2 border-black">
+                <Smartphone className="w-3 h-3 text-white" />
+              </div>
+              <div className="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center border-2 border-black">
+                <Zap className="w-3 h-3 text-white" />
+              </div>
+            </div>
+            <span>{t("hero.badge.react")}</span>
+            <span className="text-white/20">•</span>
+            <span>{t("hero.badge.reactNative")}</span>
           </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 break-words px-2">
-            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent">
-              {t("hero.title")}{" "}
+          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-[1.1] tracking-tight">
+            <span className="block text-white">
+              {t("hero.title")}
             </span>
-            <span className="bg-gradient-to-r from-primary-600 via-blue-600 to-primary-600 dark:from-primary-400 dark:via-blue-400 dark:to-primary-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent italic">
               Narek Kolyan
             </span>
           </h1>
@@ -51,45 +55,35 @@ export const Hero = ({ onGetStarted }: HeroProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6 font-medium"
+            className="text-xl md:text-3xl text-white/60 mb-10 font-light tracking-wide max-w-4xl mx-auto"
           >
             {t("hero.subtitle")}
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className={`text-gray-500 dark:text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed ${
-              t("cv.bio").length < 200 ? "text-lg" : "text-base"
-            }`}
-          >
-            {t("cv.bio")}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={onGetStarted}
-              className="px-8 py-4 bg-gradient-to-r from-primary-600 to-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+              className="group relative px-10 py-5 bg-white text-black rounded-full font-bold text-lg shadow-2xl hover:shadow-white/10 transition-all duration-300 flex items-center gap-3 overflow-hidden"
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-10 transition-opacity" />
               {t("hero.viewCv")}
-              <ArrowDown className="w-5 h-5" />
+              <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => {
                 const element = document.getElementById("projects");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-8 py-4 bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 border-2 border-primary-600 dark:border-primary-400 rounded-xl font-semibold hover:bg-primary-50 dark:hover:bg-slate-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="px-10 py-5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-bold text-lg backdrop-blur-sm transition-all duration-300"
             >
               {t("hero.seeProjects")}
             </motion.button>
@@ -100,15 +94,10 @@ export const Hero = ({ onGetStarted }: HeroProps) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{
-          delay: 1,
-          repeat: Infinity,
-          repeatType: "reverse",
-          duration: 2,
-        }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-20"
       >
-        <ArrowDown className="w-6 h-6 text-gray-400 animate-bounce" />
+        <div className="w-[1px] h-24 bg-gradient-to-b from-white to-transparent" />
       </motion.div>
     </div>
   );

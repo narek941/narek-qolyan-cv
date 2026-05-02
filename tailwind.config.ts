@@ -21,6 +21,13 @@ const config: Config = {
           800: '#075985',
           900: '#0c4a6e',
         },
+        zinc: {
+          950: '#09090b',
+        }
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },

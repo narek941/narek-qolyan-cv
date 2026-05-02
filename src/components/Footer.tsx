@@ -7,106 +7,57 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-gray-900 dark:bg-slate-950 text-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Narek Kolyan</h3>
-            <p className="text-gray-400">{t("footer.description")}</p>
+    <footer className="bg-black text-white py-24 px-4 sm:px-6 lg:px-8 border-t border-white/5 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid md:grid-cols-4 gap-12 mb-16">
+          <div className="md:col-span-2">
+            <h3 className="text-3xl font-black mb-6 tracking-tighter">NK<span className="text-blue-500">.</span></h3>
+            <p className="text-white/40 text-lg leading-relaxed max-w-sm">{t("footer.description")}</p>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">{t("footer.quickLinks")}</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <a href="#home" className="hover:text-white transition-colors">
-                  {t("nav.home")}
-                </a>
-              </li>
-              <li>
-                <a href="#cv" className="hover:text-white transition-colors">
-                  {t("nav.cv")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#skills"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("nav.skills")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("nav.projects")}
-                </a>
-              </li>
-              <li>
-                <a href="#game" className="hover:text-white transition-colors">
-                  {t("nav.game")}
-                </a>
-              </li>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-white/20 mb-8">{t("footer.quickLinks")}</h4>
+            <ul className="space-y-4">
+              {["home", "cv", "skills", "projects", "game"].map((item) => (
+                <li key={item}>
+                  <a href={`#${item}`} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
+                    {t(`nav.${item}`)}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">{t("footer.connect")}</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-white/20 mb-8">{t("footer.connect")}</h4>
+            <ul className="space-y-4">
               <li>
-                <a
-                  href={cvData.personalInfo.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("cv.github")}
+                <a href={cvData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
+                  Github
                 </a>
               </li>
               <li>
-                <a
-                  href={cvData.personalInfo.medium}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("cv.medium")}
+                <a href={cvData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
+                  LinkedIn
                 </a>
               </li>
               <li>
-                <a
-                  href={cvData.personalInfo.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  {t("cv.linkedin")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${cvData.personalInfo.email}`}
-                  className="hover:text-white transition-colors"
-                >
+                <a href={`mailto:${cvData.personalInfo.email}`} className="text-white/50 hover:text-white transition-colors text-sm font-medium">
                   {cvData.personalInfo.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${cvData.personalInfo.phone.replace(/\s/g, "")}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {cvData.personalInfo.phone}
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} Narek Kolyan. {t("footer.rights")}
-            .
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-white/20 text-xs font-medium tracking-widest uppercase">
+            &copy; {new Date().getFullYear()} Narek Kolyan. {t("footer.rights")}.
           </p>
+          <div className="flex gap-6">
+            <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/20 hover:text-white/60 transition-all cursor-pointer">
+              <span className="text-[10px] font-bold">NK</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

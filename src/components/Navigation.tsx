@@ -35,36 +35,37 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] max-w-4xl rounded-full border border-white/10 ${
         scrolled
-          ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-black/40 backdrop-blur-2xl shadow-[0_0_50px_-12px_rgba(255,255,255,0.1)] py-2"
+          : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="px-6">
+        <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <button
               onClick={() => handleNavClick("home")}
-              className="text-2xl font-bold text-primary-600 dark:text-primary-400"
+              className="text-xl font-black text-white tracking-tighter"
             >
-              NK
+              NK<span className="text-blue-500">.</span>
             </button>
           </div>
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-2 lg:px-3 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                   activeSection === item.id
-                    ? "text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20"
-                    : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                    ? "text-white bg-white/10"
+                    : "text-white/50 hover:text-white hover:bg-white/5"
                 }`}
               >
                 {item.label}
               </button>
             ))}
+            <div className="w-px h-4 bg-white/10 mx-2" />
             <LanguageSwitcher
               currentLocale={locale}
               onLanguageChange={setLocale}
@@ -77,7 +78,7 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
             />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              className="p-2 text-white/70 hover:text-white transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -102,11 +103,11 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
               onClick={() => setMobileMenuOpen(false)}
             />
             <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.3 }}
-              className="fixed top-16 right-0 bottom-0 w-64 bg-white dark:bg-slate-900 shadow-xl z-50 md:hidden overflow-y-auto"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-zinc-900/90 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl z-50 md:hidden overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col p-4 space-y-2">
@@ -114,10 +115,10 @@ export const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`px-4 py-3 rounded-lg text-left font-medium transition-colors ${
+                    className={`px-6 py-4 rounded-2xl text-left font-bold tracking-widest uppercase text-xs transition-all ${
                       activeSection === item.id
-                        ? "text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                        ? "text-white bg-white/10"
+                        : "text-white/50 hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {item.label}
