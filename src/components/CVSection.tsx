@@ -38,9 +38,10 @@ export const CVSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-zinc-900/50 backdrop-blur-sm rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative z-10"
+          className="bg-zinc-900/50 backdrop-blur-sm rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative z-10 overflow-hidden"
         >
-          <div className="text-center mb-8 pb-8 border-b border-gray-200 dark:border-slate-700">
+          <div className="absolute inset-0 bg-dots opacity-[0.02] -z-10" />
+          <div className="text-center mb-8 pb-8 border-b border-gray-200 dark:border-slate-700 relative z-10">
             <h1 className="text-4xl font-black text-white mb-2 tracking-tight">
               {cvData.personalInfo.name}
             </h1>

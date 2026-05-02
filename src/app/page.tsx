@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden relative z-10">
       <Navigation activeSection={activeSection} onNavigate={scrollToSection} />
       <section id="home">
         <Hero onGetStarted={() => scrollToSection("cv")} />
