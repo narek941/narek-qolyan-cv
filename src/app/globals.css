@@ -42,12 +42,13 @@ html {
     @apply bg-zinc-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
   }
   .bg-dots {
-    background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 1px);
     background-size: 15px 15px;
     background-position: 7.5px 7.5px;
   }
 }
-  
+
+@layer base {
   .pdf-export-content {
     background: white !important;
   }

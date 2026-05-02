@@ -139,27 +139,27 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </div>
 
-        <div className="flex gap-3 pt-4 border-t border-white/5">
+        <div className="flex gap-3 pt-4 border-t border-white/5 relative z-10">
           {project.github && (
             <motion.a
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.1, rotate: 5, backgroundColor: "rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.9 }}
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all border border-white/5"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white transition-all border border-white/5"
             >
               <Github className="w-5 h-5" />
             </motion.a>
           )}
           {project.link && (
             <motion.a
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, backgroundColor: "#60a5fa" }}
               whileTap={{ scale: 0.95 }}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-full text-sm font-black tracking-tighter hover:bg-blue-400 transition-all"
+              className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white text-black rounded-full text-sm font-black tracking-tighter transition-all"
             >
               {t("projects.liveDemo")}
               <ExternalLink className="w-4 h-4" />
@@ -196,19 +196,36 @@ export const ProjectsShowcase = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={{
+                hidden: { opacity: 0, y: 30, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                  },
+                },
+              }}
             >
               <ProjectCard project={project} />
             </motion.div>

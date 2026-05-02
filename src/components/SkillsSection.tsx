@@ -139,12 +139,16 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30, scale: 0.9, rotate: -2 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
+    rotate: 0,
     transition: {
-      duration: 0.5,
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
     },
   },
 };
@@ -192,13 +196,15 @@ export const SkillsSection = () => {
               <div className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 rounded-[2.5rem] p-8 h-full transition-all duration-500 hover:border-white/20 hover:bg-zinc-900/80 shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-dots opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500" />
                 <div className="flex items-center gap-5 mb-8 relative z-10">
-                  <div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform duration-500`}
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center text-white shadow-2xl group-hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.2)] transition-all duration-500`}
                   >
                     <div className="w-7 h-7">
                       {category.icon}
                     </div>
-                  </div>
+                  </motion.div>
                   <h3 className="text-2xl font-bold text-white tracking-tight">
                     {category.title}
                   </h3>

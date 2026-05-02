@@ -121,85 +121,102 @@ export const GameSection = () => {
   const allMatched = cards.every((card) => card.matched);
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-20 py-12 sm:py-20 px-3 sm:px-4 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-x-hidden">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white break-words px-2">
-          {t("game.title")}
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base px-2">
-          {t("game.subtitle")}
-        </p>
+    <div className="min-h-screen pt-32 py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-x-hidden relative">
+      <div className="absolute top-[20%] left-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-4 sm:p-6 md:p-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
-            <div className="text-center">
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                {t("game.moves")}
-              </p>
-              <p className="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400">
-                {moves}
-              </p>
-            </div>
-            <button
-              onClick={resetGame}
-              className="px-4 sm:px-6 py-2 bg-primary-600 text-white rounded-lg text-sm sm:text-base font-semibold hover:bg-primary-700 transition-colors w-full sm:w-auto"
-            >
-              {t("game.newGame")}
-            </button>
-            <div className="text-center">
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                {t("game.status")}
-              </p>
-              <p className="text-xl sm:text-2xl font-bold text-green-600 dark:text-green-400">
-                {allMatched ? `✓ ${t("game.won")}` : t("game.playing")}
-              </p>
-            </div>
-          </div>
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-6xl font-black mb-6 text-white tracking-tight">
+            {t("game.title")}
+          </h2>
+          <p className="text-lg sm:text-2xl text-white/40 max-w-2xl mx-auto font-light">
+            {t("game.subtitle")}
+          </p>
+        </div>
 
-          {gameWon && (
-            <div className="mb-6 p-4 bg-green-100 dark:bg-green-900/20 rounded-lg text-center">
-              <p className="text-base sm:text-lg font-semibold text-green-800 dark:text-green-400">
-                🎉{" "}
-                {t("game.congratulations").replace("{moves}", moves.toString())}
-              </p>
-            </div>
-          )}
+        <div className="bg-zinc-900/50 backdrop-blur-sm border border-white/5 rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 bg-dots opacity-[0.03]" />
+          
+          <div className="relative z-10">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-8 mb-12">
+              <div className="flex items-center gap-8">
+                <div className="text-center">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-2">
+                    {t("game.moves")}
+                  </p>
+                  <p className="text-3xl font-black text-white">
+                    {moves}
+                  </p>
+                </div>
+                <div className="w-px h-10 bg-white/10" />
+                <div className="text-center">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-2">
+                    {t("game.status")}
+                  </p>
+                  <p className={`text-xl font-black ${allMatched ? "text-green-400" : "text-blue-400"}`}>
+                    {allMatched ? t("game.won") : t("game.playing")}
+                  </p>
+                </div>
+              </div>
 
-          <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4">
-            {cards.map((card, index) => (
               <button
-                key={card.id}
-                onClick={() => handleCardClick(index)}
-                disabled={isProcessing || card.matched}
-                className={`aspect-square rounded-lg transition-all duration-300 transform flex items-center justify-center ${
-                  card.flipped || card.matched
-                    ? "bg-primary-500 text-white scale-100"
-                    : "bg-gray-300 dark:bg-slate-700 text-transparent hover:bg-gray-400 dark:hover:bg-slate-600 scale-95 hover:scale-100"
-                } ${
-                  card.matched
-                    ? "opacity-50 cursor-not-allowed"
-                    : "cursor-pointer"
-                }`}
+                onClick={resetGame}
+                className="px-8 py-4 bg-white text-black rounded-full font-black text-sm tracking-tighter hover:bg-blue-400 transition-all shadow-2xl"
               >
-                {card.flipped || card.matched ? (
-                  <div className="flex flex-col items-center justify-center gap-0.5 sm:gap-1">
-                    <div className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 flex items-center justify-center">
-                      <card.Icon className="w-full h-full" />
-                    </div>
-                    <span className="text-[8px] sm:text-xs font-medium leading-tight text-center">
-                      {card.value}
-                    </span>
-                  </div>
-                ) : (
-                  <span className="text-lg sm:text-2xl md:text-3xl">?</span>
-                )}
+                {t("game.newGame")}
               </button>
-            ))}
+            </div>
+
+            {gameWon && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="mb-12 p-6 bg-green-500/10 border border-green-500/20 rounded-2xl text-center"
+              >
+                <p className="text-xl font-bold text-green-400">
+                  🎉 {t("game.congratulations").replace("{moves}", moves.toString())}
+                </p>
+              </motion.div>
+            )}
+
+            <div className="grid grid-cols-4 gap-4 sm:gap-6">
+              {cards.map((card, index) => (
+                <button
+                  key={card.id}
+                  onClick={() => handleCardClick(index)}
+                  disabled={isProcessing || card.matched}
+                  className={`aspect-square rounded-2xl transition-all duration-500 transform flex items-center justify-center border ${
+                    card.flipped || card.matched
+                      ? "bg-white text-black border-white scale-105"
+                      : "bg-white/5 text-transparent border-white/10 hover:bg-white/10 scale-100 hover:scale-105"
+                  } ${
+                    card.matched
+                      ? "opacity-20 cursor-not-allowed"
+                      : "cursor-pointer"
+                  } shadow-2xl relative overflow-hidden group`}
+                >
+                  <div className="absolute inset-0 bg-dots opacity-[0.05]" />
+                  {card.flipped || card.matched ? (
+                    <div className="flex flex-col items-center justify-center gap-2 relative z-10">
+                      <div className="w-6 h-6 sm:w-10 sm:h-10 flex items-center justify-center">
+                        <card.Icon className="w-full h-full" />
+                      </div>
+                      <span className="text-[10px] font-black uppercase tracking-tighter text-center">
+                        {card.value}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-xl sm:text-3xl text-white/20 font-black relative z-10 group-hover:text-white/40 transition-colors">?</span>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 text-center text-gray-600 dark:text-gray-400">
-          <p className="text-xs sm:text-sm">{t("game.instructions")}</p>
+        <div className="mt-12 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-white/20">{t("game.instructions")}</p>
         </div>
       </div>
     </div>

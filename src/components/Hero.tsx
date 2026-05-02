@@ -7,11 +7,32 @@ import type { HeroProps } from "@/types/components.types";
 
 export const Hero = ({ onGetStarted }: HeroProps) => {
   const { t } = useLanguage();
+  
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { currentTarget, clientX, clientY } = e;
+    const { left, top } = currentTarget.getBoundingClientRect();
+    const x = clientX - left;
+    const y = clientY - top;
+    currentTarget.style.setProperty("--mouse-x", `${x}px`);
+    currentTarget.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
+    <div 
+      onMouseMove={handleMouseMove}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
+    >
+      {/* Interactive Mouse Glow */}
+      <motion.div
+        className="pointer-events-none absolute -inset-px opacity-50 transition duration-300 z-0"
+        style={{
+          background: "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.1), transparent 80%)",
+        }}
+      />
+
       {/* Expo-style vibrant radial gradients */}
-      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-blue-600/20 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-purple-600/20 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-blue-600/10 rounded-full blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-purple-600/10 rounded-full blur-[120px] -z-10 animate-pulse" style={{ animationDelay: '1s' }} />
       <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-indigo-600/10 rounded-full blur-[100px] -z-10" />
       <div className="absolute inset-0 bg-dots opacity-[0.03] -z-10" />
 
@@ -44,12 +65,33 @@ export const Hero = ({ onGetStarted }: HeroProps) => {
           </motion.div>
 
           <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-[1.1] tracking-tight">
-            <span className="block text-white">
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="block text-white"
+            >
               {t("hero.title")}
-            </span>
-            <span className="block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent italic">
+            </motion.span>
+            <motion.span 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="block bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent italic pb-2"
+              style={{
+                backgroundSize: "200% 200%",
+              }}
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
               Narek Kolyan
-            </span>
+            </motion.span>
           </h1>
 
           <motion.p

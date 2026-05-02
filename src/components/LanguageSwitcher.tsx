@@ -33,13 +33,12 @@ export const LanguageSwitcher = ({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
+        className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all backdrop-blur-md"
         aria-label={t("nav.changeLanguage")}
       >
-        <Languages className="w-4 h-4" />
-        <span className="text-lg">{currentFlag}</span>
-        <span className="text-sm font-medium hidden sm:inline">
-          {currentLanguage}
+        <span className="text-base">{currentFlag}</span>
+        <span className="text-[10px] font-black uppercase tracking-widest text-white/70 hidden sm:inline">
+          {currentLocale}
         </span>
       </button>
 
@@ -51,23 +50,23 @@ export const LanguageSwitcher = ({
               onClick={() => setIsOpen(false)}
             />
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute top-full mt-2 right-0 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-lg z-50 min-w-[150px]"
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              className="absolute top-full mt-4 right-0 bg-zinc-900/90 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl z-50 min-w-[140px] overflow-hidden"
             >
               {locales.map((lang) => (
                 <button
                   key={lang}
                   onClick={() => handleLanguageChange(lang)}
-                  className={`w-full flex items-center gap-3 px-4 py-2 text-left hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-white/5 transition-all ${
                     currentLocale === lang
-                      ? "bg-primary-50 dark:bg-primary-900/20"
-                      : ""
+                      ? "bg-white/10 text-white"
+                      : "text-white/50"
                   }`}
                 >
                   <span className="text-lg">{localeFlags[lang]}</span>
-                  <span className="text-sm font-medium">
+                  <span className="text-xs font-bold uppercase tracking-widest">
                     {localeNames[lang]}
                   </span>
                 </button>

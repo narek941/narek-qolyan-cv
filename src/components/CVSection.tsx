@@ -34,10 +34,15 @@ export const CVSection = () => {
 
         <motion.div
           ref={cvRef}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            delay: 0.2
+          }}
           className="bg-zinc-900/50 backdrop-blur-sm rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative z-10 overflow-hidden"
         >
           <div className="absolute inset-0 bg-dots opacity-[0.02] -z-10" />

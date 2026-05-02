@@ -38,9 +38,9 @@ export const PDFExport = () => {
   return (
     <button
       onClick={handleExportPDF}
-      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+      className="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-black text-sm tracking-tighter shadow-2xl hover:bg-blue-400 transition-all hover:scale-105"
     >
-      <Download className="w-5 h-5" />
+      <Download className="w-4 h-4" />
       {t("cv.exportPdf")}
     </button>
   );
