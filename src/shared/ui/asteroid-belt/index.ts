@@ -1,0 +1,1 @@
+export { AsteroidBelt } from "./AsteroidBelt";

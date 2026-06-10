@@ -1,0 +1,272 @@
+{
+  "nav": {
+    "home": "Home",
+    "cv": "CV",
+    "skills": "Skills",
+    "projects": "Projects",
+    "game": "Game",
+    "changeLanguage": "Change language"
+  },
+  "chapters": {
+    "liftoff": {
+      "label": "Liftoff",
+      "title": "Begin the journey",
+      "subtitle": "A senior frontend engineer floating between web and mobile worlds."
+    },
+    "origin": {
+      "label": "Origin",
+      "title": "Where it started",
+      "subtitle": "Six years of orbits — companies, missions, milestones that shaped the path."
+    },
+    "craft": {
+      "label": "Craft",
+      "title": "Tools of the trade",
+      "subtitle": "The constellation of languages, frameworks and tools I navigate by."
+    },
+    "worlds": {
+      "label": "Worlds",
+      "title": "Worlds I've built",
+      "subtitle": "Production planets, side experiments, and open-source moons."
+    },
+    "play": {
+      "label": "Play",
+      "title": "Take a break",
+      "subtitle": "Every long journey needs a pit stop. Try a quick game."
+    }
+  },
+  "hero": {
+    "title": "Hi, I'm",
+    "subtitle": "Building modern web & mobile applications",
+    "description": "Hi! I'm a React developer who strives to create functional web/mobile applications. My goal is to make my work as efficient and user-friendly as possible. I started my journey in programming with simple projects, and since then, I've been continuously learning and improving. I'm ready to face challenges and always try to find a solution for every task. I'd be happy to help bring your ideas to life!",
+    "viewCv": "View CV",
+    "seeProjects": "See Projects",
+    "badge": {
+      "react": "React Developer",
+      "reactNative": "React Native",
+      "fullStack": "Full Stack Experience"
+    }
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "name": "Narek Kolyan",
+    "exportPdf": "Export to PDF",
+    "skills": "Skills",
+    "experience": "Work Experience",
+    "language": "Languages",
+    "additionalInfo": "Additional Information",
+    "professionalSummary": "Professional Summary",
+    "keyAchievements": "Key Engineering Achievements",
+    "engineeringPrinciples": "Engineering Principles",
+    "principle1": "Write maintainable, modular code",
+    "principle2": "Optimize performance before scaling infrastructure",
+    "principle3": "Prefer simple architectures over complex abstractions",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "medium": "Medium",
+    "visitWebsite": "Visit {company} website",
+    "bio": "Senior Frontend Engineer with 5+ years of experience building scalable web and mobile applications. Focused on React, TypeScript, architecture, and performance. Open to remote opportunities.",
+    "professionalSummaryText": "Senior Frontend Engineer with 6+ years of experience building scalable web and mobile applications using React, TypeScript, and modern frontend architectures. Specialized in headless e-commerce, GraphQL data layers, and performance optimization for high-traffic applications. Experienced in modular UI systems, React Native, and delivering maintainable, scalable products.",
+    "achievement1": "Designed modular React architecture and scalable frontend systems for high-traffic applications",
+    "achievement2": "Implemented GraphQL data layers and optimized data fetching for complex product and analytics UIs",
+    "achievement3": "Built headless Shopify storefronts and custom checkout flows for large-scale e-commerce",
+    "achievement4": "Developed AI-powered media generation workflows integrating multiple APIs and async processing",
+    "achievement5": "Shipped cross-platform React Native apps with BLE, health integrations, and OTA updates",
+    "achievement6": "Migrated state management to scalable solutions and improved UI performance across dashboards",
+    "shelllogix": {
+      "description": "Outsource-based software company specializing in web and mobile-based work management, project management, and custom digital solutions.",
+      "work1": "Developed complex React and React Native applications for analytics platforms, e-commerce, and enterprise dashboards",
+      "work2": "Designed modular frontend architecture and GraphQL-based data layers improving maintainability and API efficiency",
+      "work3": "Built headless Shopify storefronts, custom checkout flows, and cross-platform mobile apps with modern state management",
+      "work4": "Collaborated with international teams to deliver scalable web and mobile solutions for US and EU clients"
+    },
+    "opta": {
+      "description": "World leader in sports AI. With 7.2 petabytes of proprietary sports data and 8 foundation sports AI models, empowering the world's top sports broadcasters, media, apps, leagues, federations, bookmakers and teams.",
+      "work1": "Managed and validated large-scale sports datasets across multiple leagues with 100% accuracy and strict deadlines",
+      "work2": "Coordinated with global data teams to deliver real-time statistics to broadcasters and media partners",
+      "work3": "Applied deep domain knowledge in sports data to build accurate filtering and statistics-heavy UIs"
+    },
+    "additionalInfo1": "Available for full-time remote or relocation",
+    "additionalInfo2": "Passionate about clean code, performance, and beautiful UI/UX",
+    "additionalInfo3": "Active open-source contributor on GitHub",
+    "additionalInfo4": "Fast learner – successfully transitioned from sports data industry to full-time software engineering",
+    "education": {
+      "title": "Education",
+      "degree": "Bachelor's Degree in Agriculture Marketing & Business",
+      "institution": "Armenian National Agrarian University",
+      "period": "Sep 2018 – Jun 2022",
+      "location": "Yerevan, Armenia",
+      "coursework": "Relevant coursework: Economics, Statistics, Project Management"
+    },
+    "languages": {
+      "armenian": "Native / First Language",
+      "russian": "C1 – Advanced",
+      "english": "B2 – Upper-Intermediate (professional working proficiency)"
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "A comprehensive toolkit for building modern web and mobile applications",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend/API",
+    "ecommerce": "E-commerce",
+    "tools": "Tools",
+    "other": "Other"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A collection of my recent work, including web applications, mobile apps, and open-source tools",
+    "technologies": "Technologies:",
+    "features": "Key Features:",
+    "hideFeatures": "Hide features",
+    "architectureHighlights": "Architecture Highlights",
+    "viewNpm": "View on npm",
+    "viewGithub": "GitHub",
+    "liveDemo": "Live Demo",
+    "teamProject": "Team Project",
+    "personalProject": "Personal Project",
+    "status": {
+      "production": "Production",
+      "development": "Development",
+      "published": "Published"
+    },
+    "accounting-platform": {
+      "description": "My first project - still in use today. Multi-language web application for accounting services in Armenia. Features canvas forms and form-to-email functionality. Built with modern React stack.",
+      "feature1": "Multi-language support (Armenian, English, Russian)",
+      "feature2": "Canvas-based form generation",
+      "feature3": "Form-to-email functionality",
+      "feature4": "Company registration services",
+      "feature5": "Tax planning and consultation",
+      "feature6": "Responsive design for all devices"
+    },
+    "crypto-admin-panel": {
+      "description": "Admin panel for cryptocurrency exchange and statistics. Built for a Ukrainian company. Real-time pair tickers, account capital charts, trading tables, and role-based admin navigation.",
+      "feature1": "Real-time cryptocurrency exchange rates",
+      "feature2": "Account capital and P&L analytics with area charts",
+      "feature3": "Trading pairs and assets doughnut breakdowns",
+      "feature4": "Accounts, users, and alerts management",
+      "feature5": "Export and multi-exchange account overview"
+    },
+    "nft-whitelabel-platform": {
+      "description": "White-label NFT marketplace front-end. Pack drops, collections, redeem flows, wallet connect, and Redux Toolkit entity architecture with Storybook.",
+      "feature1": "White-label NFT marketplace with themed color packs",
+      "feature2": "Pack carousel, collection filters, and redeem flows",
+      "feature3": "Wallet connect and shopping cart integration",
+      "feature4": "Entity-driven Redux architecture with mock/API injection",
+      "feature5": "Component library documented in Storybook",
+      "feature6": "Responsive layouts with Poppins design system"
+    },
+    "mobile-ecommerce-solution": {
+      "description": "Ready-to-use mobile shopping apps for 100+ brands across Russia, UK, and US. 5+ analytics variants, custom backend, Shopify integration. Fullstack role (React, React Native, Node.js) in 40+ team.",
+      "arch1": "Multi-brand whitelabel architecture",
+      "arch2": "Shopify API integration layer",
+      "arch3": "Modular analytics pipeline (5+ variants)",
+      "feature1": "Ready-to-use applications for 100+ brands",
+      "feature2": "Multiple analytics variants (5+)",
+      "feature3": "Custom backend integration",
+      "feature4": "Shopify backend support",
+      "feature5": "Cross-platform (iOS & Android)",
+      "feature6": "Industry-specific solutions",
+      "feature7": "Real-time product browsing",
+      "feature8": "Secure checkout and payments"
+    },
+    "rv-rental-platform": {
+      "description": "Built headless Shopify storefront serving thousands of products with optimized GraphQL queries and scalable UI architecture. US-based RV rental platform with custom checkout and campground booking. Worked as React developer on multiple rental projects.",
+      "arch1": "Optimized GraphQL product queries",
+      "arch2": "Custom checkout and booking flow",
+      "arch3": "Scalable storefront architecture",
+      "feature1": "RV vehicle rental system",
+      "feature2": "Campground booking functionality",
+      "feature3": "Custom Shopify checkout",
+      "feature4": "Payment processing",
+      "feature5": "Reservation management",
+      "feature6": "Multi-project involvement"
+    },
+    "ai-social-media-generator": {
+      "description": "AI studio for social content. Multi-model image/video generation, scene-based stitching, brand guidelines, and automated prompt pipelines. Built for US client.",
+      "arch1": "Async job queue",
+      "arch2": "Multi-API orchestration",
+      "arch3": "Video processing pipeline",
+      "feature1": "Multiple AI model integration",
+      "feature2": "Video generation by parts",
+      "feature3": "Automatic video connection",
+      "feature4": "Social media post creation",
+      "feature5": "Content automation workflow",
+      "feature6": "Business-focused features"
+    },
+    "git-cli-tool": {
+      "description": "use-multiple-gits — CLI to manage multiple git identities (user.name, user.email, SSH keys). One-command setup, use-work / use-personal switching, shell integration. MIT · npm.",
+      "feature1": "Cross-platform support",
+      "feature2": "Interactive CLI setup",
+      "feature3": "Automatic SSH key switching",
+      "feature4": "Shell integration",
+      "feature5": "50+ unit tests"
+    },
+    "dealer-service-portal": {
+      "description": "Nx monorepo for cabinetry manufacturing — admin analytics, dealer accounts, quote workflows, and role-based portals for internal staff and dealer partners.",
+      "feature1": "Admin analytics with period filters (7d / 30d / 90d / YTD)",
+      "feature2": "Dealer account management and status workflows",
+      "feature3": "Role-based admin and dealer client apps",
+      "feature4": "Quote pipeline KPIs and dealer rankings",
+      "feature5": "Organizations and users tables with live filtering",
+      "feature6": "Feature-based Nx workspace architecture"
+    },
+    "service-admin-panel": {
+      "description": "Enterprise admin dashboard for 50+ employee company. User segmentation, marketing campaigns, real-time analytics. HubSpot and Communication Service integrations.",
+      "arch1": "Feature-based modular architecture",
+      "arch2": "Real-time sync pipeline",
+      "arch3": "User segmentation engine",
+      "feature1": "Real-time dashboard analytics",
+      "feature2": "User segmentation management",
+      "feature3": "Advanced filtering system",
+      "feature4": "HubSpot integration",
+      "feature5": "Communication Service sync",
+      "feature6": "Feature-based architecture"
+    },
+    "mobile-webview-app": {
+      "description": "React Native application with WebView integration for displaying company website. Main feature is per-app VPN functionality that users can enable directly in the app. Built for previous company.",
+      "feature1": "WebView component integration",
+      "feature2": "Per-app VPN functionality",
+      "feature3": "In-app VPN toggle",
+      "feature4": "Cross-platform support (Android & iOS)",
+      "feature5": "Native module integration"
+    },
+    "mobile-health-device-app": {
+      "description": "Cross-platform mobile app for connected smart devices and health data. BLE device pairing, OTA firmware updates, and sync with major health platforms. React Native with TypeScript and Expo.",
+      "feature1": "BLE device connectivity and pairing",
+      "feature2": "Over-the-air firmware updates",
+      "feature3": "Health platform sync (iOS HealthKit, Android Health Connect, Google Fit)",
+      "feature4": "Stats dashboard and progress tracking",
+      "feature5": "Cross-platform (iOS & Android)",
+      "feature6": "Native module integration"
+    },
+    "armapply-telegram-bot": {
+      "description": "Telegram-first AI job hunter. Upload a CV once, discover jobs daily, score fit with an LLM, and create grounded Gmail drafts with one tap — sent from the user's own account.",
+      "feature1": "CV upload with LLM profile parsing (pdfplumber + OCR fallback)",
+      "feature2": "Daily job discovery from LinkedIn, staff.am, and Telegram channels",
+      "feature3": "Fit scoring with grounded, experience-based cover letters",
+      "feature4": "One-tap Gmail draft creation with CV attached",
+      "feature5": "User-owned Gmail sending — no shared inbox spam",
+      "feature6": "Per-user Postgres state indexed by Telegram chat ID"
+    }
+  },
+  "game": {
+    "title": "Memory Game",
+    "subtitle": "Match all pairs of cards to win! Test your memory skills.",
+    "moves": "Moves",
+    "status": "Status",
+    "playing": "Playing",
+    "won": "Won",
+    "newGame": "New Game",
+    "congratulations": "Congratulations! You won in {moves} moves!",
+    "instructions": "Click on cards to flip them. Match pairs to win!"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "rights": "All rights reserved",
+    "description": "Full Stack Developer passionate about building modern applications."
+  }
+}

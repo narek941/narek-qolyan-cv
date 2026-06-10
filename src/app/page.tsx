@@ -1,70 +1,74 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/Hero";
-import { CVSection } from "@/components/CVSection";
-import { ProjectsShowcase } from "@/components/ProjectsShowcase";
-import { SkillsSection } from "@/components/SkillsSection";
-import { GameSection } from "@/components/GameSection";
-import { Footer } from "@/components/Footer";
-import { useLanguage } from "@/contexts/LanguageContext";
+import type { ReactNode } from "react";
+
+import { Navigation } from "@/widgets/navigation";
+import { Hero } from "@/widgets/hero";
+import { CVSection } from "@/widgets/cv-section";
+import { ProjectsShowcase } from "@/widgets/projects-section";
+import { SkillsSection } from "@/widgets/skills-section";
+import { GameSection } from "@/widgets/game-section";
+import { Footer } from "@/widgets/footer";
+import { CosmicBackground } from "@/widgets/cosmic-background";
+import { ChapterScene } from "@/widgets/chapter-scene";
+import { Cockpit } from "@/widgets/cockpit";
+
+import { useLanguage } from "@/features/language-switcher/LanguageContext";
+import { useActiveSection } from "@/shared/lib/hooks";
+import { CHAPTERS, CHAPTER_IDS } from "@/shared/constants/chapters.const";
+import type { Locale } from "@/shared/i18n-messages/config";
+import type { ChapterDef, ChapterSectionId } from "@/shared/types/chapter.types";
+import { BootLoader } from "@/shared/ui/boot-loader";
+
+type SectionRenderer = (locale: Locale) => ReactNode;
+
+const sectionRenderers: Record<ChapterSectionId, SectionRenderer> = {
+  cv: () => <CVSection />,
+  skills: (locale) => <SkillsSection key={locale} />,
+  projects: () => <ProjectsShowcase />,
+  game: () => <GameSection />,
+};
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<string>("home");
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
+  const { activeSection, scrollToSection } = useActiveSection(CHAPTER_IDS);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "cv", "skills", "projects", "game"];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const journeyChapters = CHAPTERS.filter(
+    (chapter): chapter is ChapterDef & { id: ChapterSectionId } =>
+      chapter.id !== "home"
+  );
 
   return (
-    <main className="min-h-screen overflow-x-hidden relative z-10">
+    <>
+      <BootLoader />
+      <CosmicBackground />
+      <Cockpit />
       <Navigation activeSection={activeSection} onNavigate={scrollToSection} />
-      <section id="home">
+
+      <main className="relative min-h-screen overflow-x-hidden">
         <Hero onGetStarted={() => scrollToSection("cv")} />
-      </section>
-      <section id="cv">
-        <CVSection />
-      </section>
-      <section id="skills">
-        <SkillsSection key={locale} />
-      </section>
-      <section id="projects">
-        <ProjectsShowcase />
-      </section>
-      <section id="game">
-        <GameSection />
-      </section>
-      <Footer />
-    </main>
+
+        {journeyChapters.map((chapter, chapterIndex) => {
+          const renderSection = sectionRenderers[chapter.id];
+
+          return (
+            <ChapterScene
+              key={chapter.id}
+              id={chapter.id}
+              index={chapterIndex + 1}
+              total={CHAPTERS.length - 1}
+              chapterLabel={t(`${chapter.i18nKey}.label`)}
+              title={t(`${chapter.i18nKey}.title`)}
+              subtitle={t(`${chapter.i18nKey}.subtitle`)}
+              planet={{ variant: chapter.planetVariant, hue: chapter.hue }}
+            >
+              {renderSection(locale)}
+            </ChapterScene>
+          );
+        })}
+
+        <Footer />
+      </main>
+    </>
   );
 }

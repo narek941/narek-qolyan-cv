@@ -1,0 +1,1 @@
+export { TextSpotlight } from "./TextSpotlight";
